@@ -13,8 +13,11 @@ my_classifier = ScrappyClassifier()
 my_classifier.fit(X_train, y_train)
 
 prediction = my_classifier.predict(X_test)
+random_prediction = my_classifier.random_predict(X_test)
 
 from sklearn.metrics import accuracy_score
 
 score = accuracy_score(y_test, prediction)
-print(score)
+random_score = accuracy_score(y_test, random_prediction)
+print('Scrappy Classifier Score = ', score)
+print('Random Classifier Score = ', random_score)
